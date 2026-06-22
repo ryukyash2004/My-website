@@ -22,5 +22,87 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* --- View Transitions Configuration --- */
+:root {
+  --duration-exit: 80ms;
+  --duration-enter: 120ms;
+}
+
+/* Pin the sticky header to prevent it from sliding */
+::view-transition-group(site-header) {
+  animation: none !important;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none !important;
+}
+::view-transition-new(site-header) {
+  animation: none !important;
+}
+
+/* Default Content Crossfade */
+::view-transition-old(page-content) {
+  animation: var(--duration-exit) linear both fade-out;
+}
+::view-transition-new(page-content) {
+  animation: var(--duration-enter) linear var(--duration-exit) both fade-in;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Directional slide-in/out transitions (rigid, fast) */
+::view-transition-old(.nav-forward) {
+  --slide-offset: -20px;
+  animation:
+    var(--duration-exit) linear both fade-out,
+    var(--duration-exit) linear both slide-out;
+}
+::view-transition-new(.nav-forward) {
+  --slide-offset: 20px;
+  animation:
+    var(--duration-enter) linear var(--duration-exit) both fade-in,
+    var(--duration-enter) linear var(--duration-exit) both slide-in;
+}
+
+::view-transition-old(.nav-back) {
+  --slide-offset: 20px;
+  animation:
+    var(--duration-exit) linear both fade-out,
+    var(--duration-exit) linear both slide-out;
+}
+::view-transition-new(.nav-back) {
+  --slide-offset: -20px;
+  animation:
+    var(--duration-enter) linear var(--duration-exit) both fade-in,
+    var(--duration-enter) linear var(--duration-exit) both slide-in;
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(var(--slide-offset)); }
+}
+@keyframes slide-in {
+  from { transform: translateX(var(--slide-offset)); }
+  to { transform: translateX(0); }
+}
+
+/* Respect user preferences regarding motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+

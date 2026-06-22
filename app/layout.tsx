@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,7 +32,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
         {/* Sticky Header */}
-        <header className="sticky top-0 z-50 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
+        <header
+          style={{ viewTransitionName: "site-header" } as React.CSSProperties}
+          className="sticky top-0 z-50 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80"
+        >
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
               <Image
@@ -49,6 +53,8 @@ export default function RootLayout({
               <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">Home</Link>
               <Link href="/projects" className="hover:text-zinc-600 dark:hover:text-zinc-300">Projects</Link>
               <Link href="/publications" className="hover:text-zinc-600 dark:hover:text-zinc-300">Publications</Link>
+              <Link href="/skills" className="hover:text-zinc-600 dark:hover:text-zinc-300">Skills</Link>
+              <Link href="/career" className="hover:text-zinc-600 dark:hover:text-zinc-300">Career</Link>
               <Link href="/certificates" className="hover:text-zinc-600 dark:hover:text-zinc-300">Certificates</Link>
               <Link href="/contact" className="hover:text-zinc-600 dark:hover:text-zinc-300">Contact</Link>
             </nav>
@@ -58,7 +64,9 @@ export default function RootLayout({
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col">
           <div className="mx-auto w-full max-w-6xl flex-grow px-4 py-12 sm:px-6 lg:px-8">
-            {children}
+            <ViewTransition name="page-content">
+              {children}
+            </ViewTransition>
           </div>
         </main>
 

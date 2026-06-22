@@ -90,8 +90,139 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="space-y-8 pt-8 border-t border-dashed border-zinc-200 dark:border-zinc-800">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+          <div className="space-y-1">
+            <h2 className="text-2xl font-bold tracking-tight">Core Skills</h2>
+            <p className="text-sm text-zinc-500">A preview of my primary tools and technology stack.</p>
+          </div>
+          <Link
+            href="/skills"
+            className="text-sm font-semibold text-zinc-900 dark:text-white hover:underline inline-flex items-center gap-1.5 cursor-pointer"
+          >
+            <span>View All Skills</span>
+            <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
 
-      {/* 3. Resume CTA Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Skill 1: Python */}
+          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+            <div className="space-y-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <svg className="w-8 h-8 text-zinc-700 dark:text-zinc-300" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.968 0C5.394 0 5.61 5.753 5.61 5.753l1.178 1.588s4.116-.508 5.727.026c1.611.534 2.502 1.637 2.502 3.195 0 1.558-1.077 2.802-2.585 3.097-1.508.295-5.322.076-5.322.076l-1.127 1.688s-.216 5.253 6.002 5.584c6.218.332 6.577-4.417 6.577-4.417s.467-5.066-.35-7.39c-.818-2.325-2.73-3.66-4.526-3.66h-.518V2.193S15.688.083 11.968 0zM8.88 2.22a.965.965 0 1 1 0 1.93.965.965 0 0 1 0-1.93zM6.02 9.071c-6.218-.331-6.578 4.417-6.578 4.417s-.466 5.065.351 7.39c.818 2.324 2.73 3.66 4.526 3.66h.518v3.428s.328 2.11 4.048 2.192c3.72.083 3.504-5.67 3.504-5.67l-1.178-1.671s-4.116.508-5.727-.026c-1.611-.534-2.502-1.637-2.502-3.195 0-1.558 1.077-2.802 2.585-3.098 1.508-.295 5.322-.075 5.322-.075l1.127-1.688s.216-5.253-6.002-5.584zm3.088 18.286a.965.965 0 1 1 0-1.93.965.965 0 0 1 0 1.93z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-base tracking-tight">Python</h4>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                  Primary language for backend systems, machine learning pipelines, and scripting.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-0.5 pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-900 mt-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
+            </div>
+          </div>
+
+          {/* Skill 2: FastAPI */}
+          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+            <div className="space-y-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <svg className="w-8 h-8 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-base tracking-tight">FastAPI</h4>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                  Building production-ready, high-performance async REST APIs and integrations.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-0.5 pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-900 mt-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
+            </div>
+          </div>
+
+          {/* Skill 3: Next.js */}
+          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+            <div className="space-y-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <svg className="w-8 h-8 text-zinc-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 18.5v-10.5h1.5l5.25 7v-7h1.75v10.5h-1.5l-5.25-7v7h-1.75z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-base tracking-tight">Next.js</h4>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                  Developing responsive full-stack applications with the App Router & React 19.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-0.5 pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-900 mt-4">
+              {Array.from({ length: 5 }).map((_, i) => {
+                const active = i < 4;
+                return (
+                  <svg key={i} className={`w-3.5 h-3.5 ${active ? "text-amber-500 fill-amber-500" : "text-zinc-300 dark:text-zinc-800 fill-transparent"}`} viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Skill 4: Gemini AI */}
+          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+            <div className="space-y-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <svg className="w-8 h-8 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2v20M2 12h20" strokeLinecap="round" />
+                  <path d="M12 12l5.5-5.5M12 12l-5.5 5.5M12 12l5.5 5.5M12 12l-5.5-5.5" strokeLinecap="round" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-base tracking-tight">Gemini AI</h4>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                  Integrating LLMs into backend services using prompt engineering and agents.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-0.5 pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-900 mt-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center pt-2">
+          <Link
+            href="/skills"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm cursor-pointer"
+          >
+            <span>Show More Skills</span>
+            <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      {/* 4. Resume CTA Section */}
       <section className="p-8 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 text-center max-w-2xl mx-auto space-y-4">
         <h3 className="text-xl font-bold tracking-tight">Need a physical copy of my credentials?</h3>
         <p className="text-sm text-zinc-500 max-w-md mx-auto">
