@@ -44,12 +44,12 @@ export default function Home() {
             <p>
               I have a strong foundation in backend architecture, database systems, version control, and containerized deployments. I am passionate about building reliable integration systems, backend services, and scalable applications that support real-world operational requirements.
             </p>
-            {/* Visual Text Skeleton Lines */}
+            {/* Visual Text Skeleton Lines }
             <div className="space-y-2 pt-2">
               <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-full"></div>
               <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-5/6"></div>
               <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-4/6"></div>
-            </div>
+            </div>*/}
           </div>
         </div>
 
