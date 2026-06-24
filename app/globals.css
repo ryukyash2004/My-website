@@ -61,31 +61,32 @@ body {
 }
 
 /* Directional slide-in/out transitions (rigid, fast) */
-::view-transition-old(.nav-forward) {
+html.nav-forward ::view-transition-old(page-content) {
   --slide-offset: -20px;
   animation:
     var(--duration-exit) linear both fade-out,
     var(--duration-exit) linear both slide-out;
 }
-::view-transition-new(.nav-forward) {
+html.nav-forward ::view-transition-new(page-content) {
   --slide-offset: 20px;
   animation:
     var(--duration-enter) linear var(--duration-exit) both fade-in,
     var(--duration-enter) linear var(--duration-exit) both slide-in;
 }
 
-::view-transition-old(.nav-back) {
+html.nav-back ::view-transition-old(page-content) {
   --slide-offset: 20px;
   animation:
     var(--duration-exit) linear both fade-out,
     var(--duration-exit) linear both slide-out;
 }
-::view-transition-new(.nav-back) {
+html.nav-back ::view-transition-new(page-content) {
   --slide-offset: -20px;
   animation:
     var(--duration-enter) linear var(--duration-exit) both fade-in,
     var(--duration-enter) linear var(--duration-exit) both slide-in;
 }
+
 
 @keyframes slide-out {
   from { transform: translateX(0); }
@@ -105,4 +106,67 @@ body {
     animation-delay: 0s !important;
   }
 }
+
+/* --- pretty-gecko-71 Hamburger Menu Styles --- */
+.icon-menu {
+  --gap: 5px;
+  --height-bar: 2.5px;
+  --pos-y-bar-one: 0px;
+  --pos-y-bar-three: 0px;
+  --scale-bar: 1;
+  --rotate-bar-one: 0deg;
+  --rotate-bar-three: 0deg;
+  width: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+}
+
+.bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: 9999px;
+  background-color: #a855f7; /* Tailwind purple-500 */
+  transition: all 0.2s ease;
+}
+.dark .bar {
+  background-color: #c084fc; /* Tailwind purple-400 */
+}
+
+.bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
+
+.bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
+
+.bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.menu-open.icon-menu > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
+
+.menu-open.icon-menu > .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.menu-open.icon-menu {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}
+
 

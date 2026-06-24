@@ -139,23 +139,24 @@ export default function Certificates() {
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-200"
+            className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={() => setSelectedCert(null)}
-              className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center font-bold text-lg transition-colors"
+              className="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center font-bold text-2xl transition-colors cursor-pointer focus:outline-none"
+              aria-label="Close modal"
             >
               &times;
             </button>
 
-            <div className="flex flex-col">
-              <div className="w-full bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center p-4 md:p-8 max-h-[65vh] overflow-y-auto">
+            <div className="flex flex-col overflow-y-auto">
+              <div className="w-full bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center p-4 md:p-8 min-h-[180px] shrink-0">
                 <img
                   src={selectedCert.image}
                   alt={selectedCert.title}
-                  className="max-h-[50vh] w-auto h-auto object-contain rounded border border-zinc-200 dark:border-zinc-800 shadow-sm"
+                  className="max-h-[45vh] w-auto h-auto object-contain rounded border border-zinc-200 dark:border-zinc-800 shadow-sm"
                 />
               </div>
               <div className="p-6 space-y-2 border-t border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950">

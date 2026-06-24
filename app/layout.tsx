@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
+import Navbar from "./components/Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,30 +37,9 @@ export default function RootLayout({
           style={{ viewTransitionName: "site-header" } as React.CSSProperties}
           className="sticky top-0 z-50 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80"
         >
-          <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
-              <Image
-                src="/images/logoprofile.png"
-                alt="RyukV/Abhishek Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-lg object-cover"
-              />
-              <span>RyukV/Abhishek</span>
-            </Link>
-
-            {/* Navigation links */}
-            <nav className="flex items-center gap-6 text-sm font-medium">
-              <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">Home</Link>
-              <Link href="/projects" className="hover:text-zinc-600 dark:hover:text-zinc-300">Projects</Link>
-              <Link href="/publications" className="hover:text-zinc-600 dark:hover:text-zinc-300">Publications</Link>
-              <Link href="/skills" className="hover:text-zinc-600 dark:hover:text-zinc-300">Skills</Link>
-              <Link href="/career" className="hover:text-zinc-600 dark:hover:text-zinc-300">Career</Link>
-              <Link href="/certificates" className="hover:text-zinc-600 dark:hover:text-zinc-300">Certificates</Link>
-              <Link href="/contact" className="hover:text-zinc-600 dark:hover:text-zinc-300">Contact</Link>
-            </nav>
-          </div>
+          <Navbar />
         </header>
+
 
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col">

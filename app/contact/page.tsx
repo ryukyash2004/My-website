@@ -50,10 +50,10 @@ export default function Contact() {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+        <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-950 p-6 sm:p-8 shadow-sm">
           {/* Name input */}
           <div className="flex flex-col space-y-1.5">
-            <label className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest" htmlFor="name">
+            <label className="text-[11px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider" htmlFor="name">
               Name
             </label>
             <input
@@ -63,14 +63,14 @@ export default function Contact() {
               value={formState.name}
               onChange={(e) => setFormState({ ...formState, name: e.target.value })}
               placeholder="e.g. John Doe"
-              className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-sm focus:outline-none focus:ring-1 focus:ring-zinc-400 focus:border-zinc-400 dark:focus:ring-zinc-650 dark:focus:border-zinc-650 transition-all text-zinc-900 dark:text-zinc-50"
+              className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-650 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 dark:focus:border-purple-400 dark:focus:ring-purple-400/20 transition-all duration-200 text-zinc-900 dark:text-zinc-50 outline-none"
             />
           </div>
 
           {/* Email input */}
           <div className="flex flex-col space-y-1.5">
-            <label className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest" htmlFor="email">
-              Email Address
+            <label className="text-[11px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider" htmlFor="email">
+              Email
             </label>
             <input
               id="email"
@@ -79,13 +79,13 @@ export default function Contact() {
               value={formState.email}
               onChange={(e) => setFormState({ ...formState, email: e.target.value })}
               placeholder="e.g. john@example.com"
-              className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-sm focus:outline-none focus:ring-1 focus:ring-zinc-400 focus:border-zinc-400 dark:focus:ring-zinc-650 dark:focus:border-zinc-650 transition-all text-zinc-900 dark:text-zinc-50"
+              className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-650 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 dark:focus:border-purple-400 dark:focus:ring-purple-400/20 transition-all duration-200 text-zinc-900 dark:text-zinc-50 outline-none"
             />
           </div>
 
           {/* Message textarea */}
           <div className="flex flex-col space-y-1.5">
-            <label className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest" htmlFor="message">
+            <label className="text-[11px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider" htmlFor="message">
               Message
             </label>
             <textarea
@@ -95,7 +95,7 @@ export default function Contact() {
               value={formState.message}
               onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               placeholder="Type your message details here..."
-              className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-sm focus:outline-none focus:ring-1 focus:ring-zinc-400 focus:border-zinc-400 dark:focus:ring-zinc-650 dark:focus:border-zinc-650 transition-all text-zinc-900 dark:text-zinc-50 resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-650 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 dark:focus:border-purple-400 dark:focus:ring-purple-400/20 transition-all duration-200 text-zinc-900 dark:text-zinc-50 resize-none outline-none"
             />
           </div>
 
@@ -103,7 +103,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold text-sm transition-all hover:bg-zinc-800 dark:hover:bg-zinc-200 active:scale-[0.99] flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold text-sm transition-all hover:bg-purple-650 dark:hover:bg-purple-400 hover:text-white dark:hover:text-zinc-950 hover:shadow-lg hover:shadow-purple-500/10 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
           >
             {isSubmitting ? (
               <>

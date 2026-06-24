@@ -102,21 +102,21 @@ function ProjectIcon({ id }: { id: number }) {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group flex flex-col rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 overflow-hidden p-5 space-y-4 shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+    <div className="group flex flex-col rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 overflow-hidden p-5 space-y-4 shadow-sm hover:shadow-xl hover:border-purple-500/40 dark:hover:border-purple-400/40 hover:-translate-y-1.5 transition-all duration-500 ease-out">
       {/* 1. 16:9 Visual Placeholder / Card Header */}
-      <div className={`aspect-video w-full rounded-lg bg-gradient-to-br ${project.gradient} border border-zinc-100 dark:border-zinc-900 flex flex-col items-center justify-center gap-2 relative overflow-hidden`}>
+      <div className={`aspect-video w-full rounded-xl bg-gradient-to-br ${project.gradient} border border-zinc-100/80 dark:border-zinc-900/80 flex flex-col items-center justify-center gap-2 relative overflow-hidden transition-all duration-500 group-hover:scale-[1.02]`}>
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:24px_24px] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
         
         {/* Project Icon */}
-        <div className="relative z-10 p-3 rounded-full bg-white dark:bg-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-800 group-hover:scale-110 transition-transform duration-300">
+        <div className="relative z-10 p-3 rounded-full bg-white dark:bg-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-800 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
           <ProjectIcon id={project.id} />
         </div>
       </div>
 
       {/* 2. Title & Description Area */}
       <div className="space-y-2 flex-grow">
-        <h3 className="font-bold text-xl tracking-tight text-zinc-900 dark:text-zinc-50 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors">
+        <h3 className="font-bold text-xl tracking-tight text-zinc-900 dark:text-zinc-50 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
           {project.title}
         </h3>
         <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{project.description}</p>
@@ -127,7 +127,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/80 text-zinc-600 dark:text-zinc-400"
+            className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-50/50 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800/80 text-zinc-600 dark:text-zinc-400"
           >
             {tag}
           </span>
@@ -135,12 +135,12 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* 4. Two-Button Flex Row (Repo & Demo CTAs) */}
-      <div className="flex items-center gap-3 pt-3 border-t border-dashed border-zinc-100 dark:border-zinc-900">
+      <div className="flex items-center gap-3 pt-4 border-t border-dashed border-zinc-100 dark:border-zinc-900">
         <a
           href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-grow py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-xs font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-center text-zinc-700 dark:text-zinc-300"
+          className="flex-grow py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-xs font-semibold hover:bg-purple-500/10 hover:text-purple-650 dark:hover:bg-purple-400/10 dark:hover:text-purple-400 hover:border-purple-500/30 dark:hover:border-purple-400/30 active:scale-[0.98] transition-all duration-300 text-center text-zinc-700 dark:text-zinc-300 cursor-pointer"
         >
           Code Repo
         </a>
@@ -149,14 +149,14 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.demoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-grow py-2 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors text-center"
+            className="flex-grow py-2.5 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 text-xs font-semibold hover:bg-purple-600 dark:hover:bg-purple-400 hover:text-white dark:hover:text-zinc-950 hover:shadow-md hover:shadow-purple-500/20 active:scale-[0.98] transition-all duration-300 text-center cursor-pointer"
           >
             Live Demo
           </a>
         ) : (
           <button
             disabled
-            className="flex-grow py-2 rounded-lg bg-zinc-50 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-600 text-xs font-medium cursor-not-allowed text-center border border-transparent"
+            className="flex-grow py-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-650 text-xs font-medium cursor-not-allowed text-center border border-dashed border-zinc-200 dark:border-zinc-800"
           >
             Demo Coming Soon
           </button>
