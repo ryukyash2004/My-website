@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -8,6 +9,7 @@ interface Project {
   repoUrl: string;
   demoUrl: string;
   gradient: string;
+  imageUrl?: string;
 }
 
 const projectsData: Project[] = [
@@ -19,6 +21,7 @@ const projectsData: Project[] = [
     repoUrl: "https://github.com/ryukyash2004/Health-Infrastructure-project",
     demoUrl: "",
     gradient: "from-blue-500/10 via-indigo-500/5 to-transparent",
+    imageUrl: "/images/HealthInfrastructureProject.png",
   },
   {
     id: 2,
@@ -28,6 +31,7 @@ const projectsData: Project[] = [
     repoUrl: "https://github.com/ryukyash2004/expense-tracking-app-Next.js-and-Azure-SQL",
     demoUrl: "",
     gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
+    imageUrl: "/images/expense_calculator_demo.png",
   },
   {
     id: 3,
@@ -46,6 +50,7 @@ const projectsData: Project[] = [
     repoUrl: "https://github.com/ryukyash2004/SaferouteSOS",
     demoUrl: "",
     gradient: "from-rose-500/10 via-red-500/5 to-transparent",
+    imageUrl: "/images/SaferouteSOSdemo.png",
   },
   {
     id: 5,
@@ -55,6 +60,25 @@ const projectsData: Project[] = [
     repoUrl: "https://github.com/ryukyash2004/video-management-saas",
     demoUrl: "",
     gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
+    imageUrl: "/images/VideoManagementSaas.png",
+  },
+  {
+    id: 6,
+    title: "Module Extraction AI Agent",
+    description: "An intelligent agent designed to parse software repositories, map dependency graphs, and extract self-contained code modules using advanced LLM reasoning and AST code parsing techniques.",
+    tags: ["Python", "Gemini AI", "AST Parsing", "LLM Agents", "Software Architecture"],
+    repoUrl: "https://github.com/ryukyash2004/Mudule_Extraction_Ai_Agent",
+    demoUrl: "",
+    gradient: "from-purple-500/10 via-pink-500/5 to-transparent",
+  },
+  {
+    id: 7,
+    title: "Python Scraper Project",
+    description: "A robust, concurrent web scraping suite designed to extract large-scale structured data from dynamic web applications, handling complex authentication, API pagination, and data serialization pipelines.",
+    tags: ["Python", "Playwright", "BeautifulSoup", "Data Pipelines", "ETL"],
+    repoUrl: "https://github.com/ryukyash2004/Python_Scrapper_Project",
+    demoUrl: "",
+    gradient: "from-teal-500/10 via-cyan-500/5 to-transparent",
   },
 ];
 
@@ -91,6 +115,18 @@ function ProjectIcon({ id }: { id: number }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       );
+    case 6:
+      return (
+        <svg className="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      );
+    case 7:
+      return (
+        <svg className="w-8 h-8 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+      );
     default:
       return (
         <svg className="w-8 h-8 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,13 +141,26 @@ function ProjectCard({ project }: { project: Project }) {
     <div className="group flex flex-col rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 overflow-hidden p-5 space-y-4 shadow-sm hover:shadow-xl hover:border-purple-500/40 dark:hover:border-purple-400/40 hover:-translate-y-1.5 transition-all duration-500 ease-out">
       {/* 1. 16:9 Visual Placeholder / Card Header */}
       <div className={`aspect-video w-full rounded-xl bg-gradient-to-br ${project.gradient} border border-zinc-100/80 dark:border-zinc-900/80 flex flex-col items-center justify-center gap-2 relative overflow-hidden transition-all duration-500 group-hover:scale-[1.02]`}>
-        {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:24px_24px] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
-        
-        {/* Project Icon */}
-        <div className="relative z-10 p-3 rounded-full bg-white dark:bg-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-800 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-          <ProjectIcon id={project.id} />
-        </div>
+        {project.imageUrl ? (
+          <Image
+            src={project.imageUrl}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            priority={project.id <= 2}
+          />
+        ) : (
+          <>
+            {/* Subtle grid pattern background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800b_1px,transparent_1px),linear-gradient(to_bottom,#8080800b_1px,transparent_1px)] bg-[size:24px_24px] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
+            
+            {/* Project Icon */}
+            <div className="relative z-10 p-3 rounded-full bg-white dark:bg-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-800 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+              <ProjectIcon id={project.id} />
+            </div>
+          </>
+        )}
       </div>
 
       {/* 2. Title & Description Area */}
@@ -173,7 +222,7 @@ export default function Projects() {
       <div className="border-b border-dashed border-zinc-200 dark:border-zinc-800 pb-6">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Featured Projects</h1>
         <p className="text-zinc-500 dark:text-zinc-400">
-          A collection of my work, spanning healthcare infrastructure, AI-powered applications, personal security, and finance managers.
+          A collection of my work, spanning healthcare infrastructure, AI-powered applications, web scraping suites, and finance managers.
         </p>
       </div>
 
@@ -186,4 +235,5 @@ export default function Projects() {
     </div>
   );
 }
+
 
