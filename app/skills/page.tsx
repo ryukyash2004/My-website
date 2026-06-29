@@ -118,6 +118,17 @@ export default function SkillsPage() {
             </svg>
           ),
         },
+        {
+          name: "Web Scraping & Automation",
+          description: "Extracting web data using Playwright, BeautifulSoup, and Puppeteer, handling dynamic content, API pagination, and rate limiting.",
+          rating: 5,
+          icon: (
+            <svg className="w-8 h-8 text-teal-650 dark:text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 3v18M3 12h18M12 3c3.333 3 5 6 5 9s-1.667 6-5 9M12 3C8.667 6 7 9 7 12s1.667 6 5 9" />
+            </svg>
+          ),
+        },
       ],
     },
     {
@@ -204,6 +215,17 @@ export default function SkillsPage() {
               <circle cx="6" cy="18" r="3" />
               <path d="M18 15V9a4 4 0 0 0-4-4h-5" />
               <path d="M9 18h6" />
+            </svg>
+          ),
+        },
+        {
+          name: "Agentic Workflows & AST Analysis",
+          description: "Designing autonomous AI agents for repository analysis, parsing abstract syntax trees (AST), and extracting self-contained code modules.",
+          rating: 5,
+          icon: (
+            <svg className="w-8 h-8 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
             </svg>
           ),
         },

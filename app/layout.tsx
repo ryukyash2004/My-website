@@ -31,11 +31,29 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+      <body className="min-h-full flex flex-col relative text-zinc-950 dark:text-zinc-50 overflow-x-hidden antialiased">
+        {/* Global Aurora/Flowy Gradient Background */}
+        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
+          {/* Moving color gradients (aurora nodes) */}
+          <div className="absolute -inset-[10px] opacity-45 dark:opacity-30 mix-blend-multiply dark:mix-blend-screen filter blur-[85px] sm:blur-[120px] transition-opacity duration-500">
+            {/* Blob 1: Purple/Indigo */}
+            <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 dark:from-purple-900/60 dark:to-indigo-800/60 animate-blob-slow animate-duration-[25s]" />
+            
+            {/* Blob 2: Fuchsia/Pink */}
+            <div className="absolute top-[20%] right-[-10%] w-[55%] h-[55%] rounded-full bg-gradient-to-br from-fuchsia-400 to-pink-500 dark:from-fuchsia-900/40 dark:to-pink-900/40 animate-blob-slower animate-duration-[30s]" />
+
+            {/* Blob 3: Violet/Blue */}
+            <div className="absolute bottom-[-10%] left-[20%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-violet-400 to-blue-500 dark:from-violet-950/50 dark:to-blue-900/50 animate-blob-slowest animate-duration-[35s]" />
+          </div>
+          
+          {/* Subtle noise/grid pattern overlay */}
+          <div className="absolute inset-0 bg-[radial-gradient(#8080800d_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff05_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        </div>
+
         {/* Sticky Header */}
         <header
           style={{ viewTransitionName: "site-header" } as React.CSSProperties}
-          className="sticky top-0 z-50 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80"
+          className="sticky top-0 z-50 w-full border-b border-dashed border-zinc-200/50 bg-zinc-50/40 backdrop-blur-md dark:border-zinc-800/40 dark:bg-zinc-950/40 transition-colors duration-500"
         >
           <Navbar />
         </header>
@@ -51,7 +69,7 @@ export default function RootLayout({
         </main>
 
         {/* Footer */}
-        <footer className="w-full border-t border-dashed border-zinc-300 py-6 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50">
+        <footer className="w-full border-t border-dashed border-zinc-200/50 py-6 dark:border-zinc-800/40 bg-zinc-100/20 dark:bg-zinc-900/20 backdrop-blur-sm transition-colors duration-500">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
             <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} RyukV/Abhishek. All rights reserved.</p>
             <div className="flex items-center gap-5 text-zinc-400">

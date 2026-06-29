@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown (Takes space in flow, pushing content down) */}
       {isOpen && (
-        <div className="md:hidden w-full border-t border-dashed border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-950/50 py-3 px-4 sm:px-6 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden w-full border-t border-dashed border-zinc-200/50 dark:border-zinc-800/40 bg-zinc-50/40 dark:bg-zinc-950/40 backdrop-blur-md py-3 px-4 sm:px-6 transition-colors duration-500 animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col gap-1 pb-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

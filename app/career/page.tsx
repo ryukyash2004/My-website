@@ -21,8 +21,8 @@ export default function CareerPage() {
       </section>
 
       {/* Professional Status Block */}
-      <section className="p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 space-y-6 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dashed border-zinc-100 dark:border-zinc-900 pb-6">
+      <section className="p-8 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md space-y-6 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dashed border-zinc-200/50 dark:border-zinc-800/30 pb-6">
           <div className="space-y-1">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">Current Professional Status</h2>
             <p className="text-sm text-zinc-500 dark:text-zinc-400">Availability and targets</p>
@@ -79,7 +79,7 @@ export default function CareerPage() {
         <div className="relative border-l border-dashed border-zinc-300 dark:border-zinc-800 pl-6 ml-2">
           {/* Target Milestone */}
           <div className="relative">
-            <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-400 dark:border-zinc-600">
+            <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-400 dark:border-zinc-600">
               <span className="h-1.5 w-1.5 rounded-full bg-zinc-600 dark:bg-zinc-400"></span>
             </span>
             <span className="text-xs font-semibold text-zinc-400 block mb-1">Present — Future</span>
@@ -97,7 +97,7 @@ export default function CareerPage() {
               </Link>
               <Link
                 href="/skills"
-                className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-xs font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-zinc-700 dark:text-zinc-300"
+                className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/40 backdrop-blur-md dark:bg-zinc-950/40 text-xs font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-zinc-700 dark:text-zinc-300"
               >
                 Review Technical Stack
               </Link>

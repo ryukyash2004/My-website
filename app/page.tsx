@@ -25,7 +25,7 @@ export default function Home() {
           </Link>
           <Link
             href="/projects"
-            className="px-6 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm"
+            className="px-6 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/40 backdrop-blur-md dark:bg-zinc-950/40 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm"
           >
             View Work
           </Link>
@@ -39,12 +39,12 @@ export default function Home() {
           <h2 className="text-2xl font-bold tracking-tight">Biography</h2>
           <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
             <p>
-              Real names Abhishek Swarnakar, I am a Computer Science undergraduate with hands-on experience developing backend systems, REST APIs, authentication workflows, and data-driven applications. I specialize in Python, TypeScript, JavaScript, and SQL, and I am experienced in designing scalable backend services, structured data pipelines, and API integrations.
+              My real name is Abhishek Swarnakar, and I am a Computer Science undergraduate with hands-on experience developing backend systems, REST APIs, authentication workflows, and data-driven applications. I specialize in Python, TypeScript, JavaScript, and SQL, and I am experienced in designing scalable backend services, structured data pipelines, and API integrations.
             </p>
             <p>
               I have a strong foundation in backend architecture, database systems, version control, and containerized deployments. I am passionate about building reliable integration systems, backend services, and scalable applications that support real-world operational requirements.
             </p>
-            {/* Visual Text Skeleton Lines }
+            {/* Visual Text Skeleton Lines 
             <div className="space-y-2 pt-2">
               <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-full"></div>
               <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-5/6"></div>
@@ -109,7 +109,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Skill 1: Python */}
-          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300/80 dark:hover:border-zinc-700/80 transition-all duration-300">
             <div className="space-y-4">
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
                 <svg className="w-8 h-8 text-zinc-700 dark:text-zinc-300" viewBox="0 0 24 24" fill="currentColor">
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
 
           {/* Skill 2: FastAPI */}
-          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300/80 dark:hover:border-zinc-700/80 transition-all duration-300">
             <div className="space-y-4">
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
                 <svg className="w-8 h-8 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           {/* Skill 3: Next.js */}
-          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300/80 dark:hover:border-zinc-700/80 transition-all duration-300">
             <div className="space-y-4">
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
                 <svg className="w-8 h-8 text-zinc-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -184,7 +184,7 @@ export default function Home() {
           </div>
 
           {/* Skill 4: Gemini AI */}
-          <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md flex flex-col justify-between min-h-[190px] shadow-sm hover:shadow-md hover:border-zinc-300/80 dark:hover:border-zinc-700/80 transition-all duration-300">
             <div className="space-y-4">
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg">
                 <svg className="w-8 h-8 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -212,7 +212,7 @@ export default function Home() {
         <div className="flex justify-center pt-2">
           <Link
             href="/skills"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/40 backdrop-blur-md dark:bg-zinc-950/40 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm cursor-pointer"
           >
             <span>Show More Skills</span>
             <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +223,7 @@ export default function Home() {
       </section>
 
       {/* 4. Resume CTA Section */}
-      <section className="p-8 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 text-center max-w-2xl mx-auto space-y-4">
+      <section className="p-8 rounded-2xl border border-dashed border-zinc-200/50 dark:border-zinc-800/40 bg-zinc-100/30 dark:bg-zinc-900/30 backdrop-blur-md text-center max-w-2xl mx-auto space-y-4">
         <h3 className="text-xl font-bold tracking-tight">Need a physical copy of my credentials?</h3>
         <p className="text-sm text-zinc-500 max-w-md mx-auto">
           Download my comprehensive resume outlining my technical skill set, full project experience, and academic details.
@@ -232,7 +232,7 @@ export default function Home() {
           <a
             href="https://drive.google.com/file/d/17gd_tgwLZ7341q5qUDUNpRJ9e6CAwa6P/view?usp=sharing"
             download="Abhishek_Resume.pdf"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/40 backdrop-blur-md dark:bg-zinc-950/40 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm cursor-pointer"
           >
             <span>Download Resume PDF</span>
             <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
