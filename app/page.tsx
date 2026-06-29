@@ -39,17 +39,11 @@ export default function Home() {
           <h2 className="text-2xl font-bold tracking-tight">Biography</h2>
           <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
             <p>
-              My real name is Abhishek Swarnakar, and I am a Computer Science undergraduate with hands-on experience developing backend systems, REST APIs, authentication workflows, and data-driven applications. I specialize in Python, TypeScript, JavaScript, and SQL, and I am experienced in designing scalable backend services, structured data pipelines, and API integrations.
+              My Real name's Abhishek Swarnakar, I am a Computer Science undergraduate with hands-on experience developing backend systems, REST APIs, authentication workflows, and data-driven applications. I specialize in Python, TypeScript, JavaScript, and SQL, and I am experienced in designing scalable backend services, structured data pipelines, and API integrations.
             </p>
             <p>
               I have a strong foundation in backend architecture, database systems, version control, and containerized deployments. I am passionate about building reliable integration systems, backend services, and scalable applications that support real-world operational requirements.
             </p>
-            {/* Visual Text Skeleton Lines 
-            <div className="space-y-2 pt-2">
-              <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-full"></div>
-              <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-5/6"></div>
-              <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-4/6"></div>
-            </div>*/}
           </div>
         </div>
 

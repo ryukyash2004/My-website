@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
 import Navbar from "./components/Navbar";
+import MouseTrail from "./components/MouseTrail";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative text-zinc-950 dark:text-zinc-50 overflow-x-hidden antialiased">
+        <MouseTrail />
         {/* Global Aurora/Flowy Gradient Background */}
         <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
           {/* Moving color gradients (aurora nodes) */}
