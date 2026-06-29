@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
 import Navbar from "./components/Navbar";
-import MouseTrail from "./components/MouseTrail";
+// @ts-ignore
+import Waves from "../components/Waves";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,11 +32,44 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col relative text-zinc-950 dark:text-zinc-50 overflow-x-hidden antialiased">
-        <MouseTrail />
+        {/* Interactive Waves Background */}
+        <div className="pointer-events-none fixed inset-0 -z-10 w-full h-full">
+          {/* @ts-ignore */}
+          <Waves
+            lineColor="#5227FF"
+            backgroundColor="transparent"
+            waveSpeedX={0.02}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.01}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
+          />
+        </div>
+
         {/* Global Aurora/Flowy Gradient Background */}
-        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
+        <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
           {/* Moving color gradients (aurora nodes) */}
           <div className="absolute -inset-[10px] opacity-45 dark:opacity-30 mix-blend-multiply dark:mix-blend-screen filter blur-[85px] sm:blur-[120px] transition-opacity duration-500">
             {/* Blob 1: Purple/Indigo */}
