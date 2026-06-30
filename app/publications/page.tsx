@@ -55,7 +55,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
   };
 
   return (
-    <div className="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 space-y-4 shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
+    <div className="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 sm:p-6 space-y-4 shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
       {/* Type badge and Date */}
       <div className="flex items-center justify-between text-xs font-mono">
         <span className="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800">
@@ -129,8 +129,8 @@ function PublicationCard({ pub }: { pub: Publication }) {
       </div>
 
       {/* Links and Actions */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-dashed border-zinc-100 dark:border-zinc-900">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-dashed border-zinc-100 dark:border-zinc-900">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <a
             href={pub.pdfUrl}
             target="_blank"
@@ -170,7 +170,7 @@ function PublicationCard({ pub }: { pub: Publication }) {
 
         <button
           onClick={handleCopyBibtex}
-          className="relative inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200 transition-all active:scale-95"
+          className="relative inline-flex items-center justify-center gap-1.5 w-full sm:w-auto px-3 py-1.5 text-xs font-mono font-medium rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200 transition-all active:scale-95"
         >
           {copied ? (
             <>
@@ -271,12 +271,15 @@ export default function Publications() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-lg self-start sm:self-auto border border-zinc-200/50 dark:border-zinc-800/50">
+        <div
+          style={{ scrollbarWidth: "none" }}
+          className="flex items-center gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-lg self-start sm:self-auto border border-zinc-200/50 dark:border-zinc-800/50 max-w-full overflow-x-auto whitespace-nowrap"
+        >
           {["All", "Journal", "Conference", "Preprint"].map((type) => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all shrink-0 ${
                 activeType === type
                   ? "bg-white dark:bg-zinc-950 text-zinc-950 dark:text-white shadow-sm"
                   : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
