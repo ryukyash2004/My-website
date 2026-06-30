@@ -58,6 +58,9 @@ export default function InteractiveAvatar() {
       } else if (swipeOffset < 0 && currentIndex < images.length - 1) {
         setCurrentIndex(1);
       }
+    } else if (Math.abs(swipeOffset) < 5) {
+      // If it's a tap/click (very little drag offset), toggle the image as a fallback
+      setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
     }
     setSwipeOffset(0);
   };
@@ -120,7 +123,7 @@ export default function InteractiveAvatar() {
       {/* 3D card tilt effect on hover wrapper */}
       <div
         ref={containerRef}
-        className="w-40 h-40 rounded-full bg-zinc-200 dark:bg-zinc-800 border-2 border-dashed border-zinc-400 dark:border-zinc-600 overflow-hidden relative shadow-md cursor-grab active:cursor-grabbing transition-transform duration-300 hover:scale-102 hover:shadow-lg"
+        className="w-40 h-40 rounded-full bg-zinc-200 dark:bg-zinc-800 border-2 border-dashed border-zinc-400 dark:border-zinc-600 overflow-hidden relative shadow-md cursor-grab active:cursor-grabbing transition-transform duration-300 hover:scale-102 hover:shadow-lg touch-pan-y"
         onPointerDown={handleImagePointerDown}
         onPointerMove={handleImagePointerMove}
         onPointerUp={handleImagePointerUp}
@@ -177,7 +180,7 @@ export default function InteractiveAvatar() {
           onPointerMove={handleScrubberPointerMove}
           onPointerUp={handleScrubberPointerUp}
           onPointerCancel={handleScrubberPointerCancel}
-          className={`flex gap-2 items-center px-3 py-1.5 rounded-full backdrop-blur-md border shadow-lg transition-all duration-300 cursor-ew-resize select-none
+          className={`flex gap-2 items-center px-3 py-1.5 rounded-full backdrop-blur-md border shadow-lg transition-all duration-300 cursor-ew-resize select-none touch-none
             ${isScrubbing
               ? "bg-white/90 dark:bg-zinc-900/90 border-zinc-300 dark:border-zinc-700 scale-95 shadow-sm"
               : "bg-white/60 dark:bg-zinc-950/60 border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white/80 hover:dark:bg-zinc-900/80 hover:scale-105"
